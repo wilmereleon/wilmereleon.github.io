@@ -19,10 +19,10 @@
 <body size="min-height: 100%">
   <!-- Fondo de imagen -->
   <div class="RatioBikes" id="formulario" style="width: 612px; height: 792px; position: relative; background: white">
-    <div class="Rectangle2" style="width: 612px; height: 396px; left: 0px; top: 400px; position: absolute; background: #2599B0; "></div>
+    <div class="Rectangle2" style="width: 612px; height: 396px; left: 0px; top: 420px; position: absolute; background: #2599B0; "></div>
     <img class="Rectangle13" style="width: 245px; height: 269px; left: 0px; top: 474px; position: absolute" src="img/sección_vectorizada.png" />
-    <img class="Rectangle1" style="width: 328px; height: 71.77px; left: 149px; top: 152px; position: absolute; transform: rotate(180deg);" src="img/logo_1.PNG" />
-    <img class="Rectangle3" style="width: 130px; height: 30px; left: 447.50px; top: 459px; position: absolute" src="img/logo_2.PNG" />
+    <img class="Rectangle1" style="width: 378px; height: 91.77px; left: 116px; top: 172px; position: absolute; transform: rotate(180deg);" src="img/logo_1b.PNG" />
+    <img class="Rectangle3" style="width: 130px; height: 30px; left: 447.50px; top: 459px; position: absolute" src="img/logo_2b.PNG" />
     <div class="Nombre" id="formulario" style="width: 76.50px; height: 17px; left: 21px; top: 518.50px; position: absolute; color: white; font-size: 15px; font-family: Montserrat; font-weight: 800; word-wrap: break-word;">
       <div class="form-group">
         <label for="nombres">Nombre:</label>
@@ -113,7 +113,7 @@
   
 
   <!-- Crear un botón que al hacer clic genere el PDF con los datos del formulario -->
-  <button id="generar" class="btn btn-primary">Generar tarjeta de propiedad</button>
+  <button id="generar" class="btn btn-primary" style="margin-top: 20px;">Generar tarjeta de propiedad</button>
 
   <!-- Crear un script que use las librerías de JavaScript para mostrar los datos en el formulario y generar el PDF -->
   <script>
@@ -134,11 +134,13 @@
     function generarPDF() {
       // Crear un objeto de opciones para el PDF
       var opciones = {
-        margin: [0, 0, 0, 0],
+        margin: 0,
         filename: "tarjeta_de_propiedad.pdf",
         image: {type: "jpeg", quality: 0.98},
-        html2canvas: {scale: 1, width: 1595, height: 1742},
-        jsPDF: {unit: "in", format: [3.34646, 4.173228], orientation: "portrait"}
+        // Tamaño de la imagen de formulario:
+        html2canvas: {scale: 3, width: 606, height: 874},
+        // Tamaño estándar de tarjeta:
+        jsPDF: {unit: "in", format: [3.375, 4.55], orientation: "portrait"}
       };
       // Usar la librería html2pdf para convertir el formulario a PDF
       html2pdf().set(opciones).from(formulario).save();
@@ -149,6 +151,10 @@
   </script>
 </body>
 </html>
+
+
+
+
 
 
 
