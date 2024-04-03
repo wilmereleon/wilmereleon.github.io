@@ -138,9 +138,9 @@
         filename: "tarjeta_de_propiedad.pdf",
         image: {type: "jpeg", quality: 0.98},
         // Tamaño de la imagen de formulario:
-        html2canvas: {scale: 3, width: 606, height: 874},
+        html2canvas: {scale: 2, width: 1606, height: 874},
         // Tamaño estándar de tarjeta:
-        jsPDF: {unit: "in", format: [3.375, 4.55], orientation: "portrait"}
+        jsPDF: {unit: "in", format: "letter", orientation: "portrait"}
       };
       // Usar la librería html2pdf para convertir el formulario a PDF
       html2pdf().set(opciones).from(formulario).save();
